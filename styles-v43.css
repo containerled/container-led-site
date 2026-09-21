@@ -1,0 +1,13 @@
+@import url("styles-v42.css");
+
+/* Fotos em formato "stories" (9:16) para não cortar tanto as imagens verticais */
+.ads-option{aspect-ratio:9/16}
+.segment-shot{aspect-ratio:9/16}
+
+@media(max-width:860px){
+  .ads-option{aspect-ratio:9/16}
+}
+
+@media(max-width:640px){
+  .ads-option{aspect-ratio:9/16}
+}
