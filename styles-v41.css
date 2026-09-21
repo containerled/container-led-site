@@ -1,0 +1,12 @@
+@import url("styles-v40.css");
+
+/* Publicidade: cards Outdoor/Totem em proporção de feed do Instagram (4:5), cortando menos a foto */
+.ads-option{min-height:0;aspect-ratio:4/5}
+
+@media(max-width:860px){
+  .ads-option{min-height:0;aspect-ratio:4/5}
+}
+
+@media(max-width:640px){
+  .ads-option{min-height:0;aspect-ratio:4/5}
+}
