@@ -28,6 +28,9 @@
 .screen-status:before{content:"";width:7px;height:7px;margin-right:7px;border-radius:50%;background:currentColor}
 .screen-status.is-live{color:#7dffad;background:#073d22;border:1px solid #0b7d42}
 .screen-status.is-building{color:#ffd19a;background:#4d2608;border:1px solid #a94d08}
+.screen-type{display:inline-flex;align-items:center;width:max-content;padding:8px 12px;border-radius:999px;text-transform:uppercase;font:800 10px/1 "Space Grotesk",sans-serif;letter-spacing:.1em;color:#fff;background:#000000a6;border:1px solid #ffffff38;backdrop-filter:blur(6px)}
+.screen-card-media>.screen-type,.other-screen-media>.screen-type{position:absolute;top:16px;right:16px}
+.screen-type-inline{margin:14px 0 0;background:#1a1a1a;border-color:#ff5a0055;color:#ff9a5c}
 .screen-card-body{display:flex;flex:1;flex-direction:column;padding:24px}
 .screen-id{color:#ff5a00;font:800 11px "Space Grotesk",sans-serif;letter-spacing:.18em}
 .screen-card h2{margin:10px 0 14px;font:700 25px/1.12 "Space Grotesk",sans-serif}
