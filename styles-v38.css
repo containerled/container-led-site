@@ -1,0 +1,34 @@
+@import url("styles-v37.css");
+
+/* Publicidade: layout "outdoor vs totem" em duelo fotográfico */
+.ads-versus{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:3px;border-radius:22px;overflow:hidden;margin-bottom:44px}
+.ads-option{position:relative;display:block;min-height:520px;overflow:hidden;color:#fff}
+.ads-option:first-of-type{grid-column:1;grid-row:1}
+.ads-option:last-of-type{grid-column:2;grid-row:1}
+.ads-option img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .5s ease;filter:brightness(.6) saturate(1.05)}
+.ads-option:hover img{transform:scale(1.06);filter:brightness(.7) saturate(1.15)}
+.ads-option:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#00000005 0%,#000000b0 72%,#000000e8 100%)}
+.ads-option-overlay{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:38px}
+.ads-option-eyebrow{display:block;margin-bottom:10px;color:var(--orange);font:800 10px "Space Grotesk",sans-serif;letter-spacing:.16em}
+.ads-option-overlay h3{margin:0 0 12px;font:700 clamp(32px,3.6vw,44px) "Space Grotesk",sans-serif;letter-spacing:-.03em;line-height:1}
+.ads-option-overlay>p{margin:0 0 18px;max-width:360px;color:#e2e2e2;font-size:13px;line-height:1.6}
+.ads-option-variants{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.ads-option-variants span{border:1px solid #ffffff40;border-radius:99px;padding:6px 13px;font:600 10px "Space Grotesk",sans-serif;letter-spacing:.03em}
+.ads-option-cta{display:inline-flex;align-items:center;gap:8px;color:#fff;font:700 12px "Space Grotesk",sans-serif;letter-spacing:.02em}
+.ads-option-cta b{color:var(--orange);font-weight:700;transition:transform .25s}
+.ads-option:hover .ads-option-cta b{transform:translateX(5px)}
+.ads-versus-divider{position:absolute;left:50%;top:50%;z-index:3;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;font:800 12px "Space Grotesk",sans-serif;letter-spacing:.06em;box-shadow:0 0 0 8px #121212,0 20px 45px #000a;transform:translate(-50%,-50%);grid-column:1/-1;grid-row:1;justify-self:center;align-self:center}
+
+@media(max-width:860px){
+  .ads-versus{grid-template-columns:1fr}
+  .ads-option:first-of-type{grid-column:1;grid-row:1}
+  .ads-option:last-of-type{grid-column:1;grid-row:3}
+  .ads-versus-divider{grid-column:1;grid-row:2;position:relative;left:auto;top:auto;transform:none;margin:-24px auto}
+  .ads-option{min-height:400px}
+}
+
+@media(max-width:640px){
+  .ads-option{min-height:360px}
+  .ads-option-overlay{padding:26px}
+  .ads-option-overlay>p{max-width:none}
+}
