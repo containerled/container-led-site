@@ -1,0 +1,53 @@
+@import url("styles-v36.css");
+
+/* Segmentos: duas linhas de produto (outdoor e totem) + prova real por segmento */
+.segments-lines{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:46px}
+.segment-line-card{padding:28px;border:1px solid #ffffff14;border-top:3px solid var(--orange);border-radius:18px;background:#ffffff05;transition:.25s}
+.segment-line-card:hover{border-color:#ff5a0060;background:#ff5a0008;transform:translateY(-3px)}
+.segment-line-card .card-index{display:block;margin-bottom:14px}
+.segment-line-card h3{margin:0 0 10px;color:#fff;font:700 24px "Space Grotesk",sans-serif;letter-spacing:-.02em}
+.segment-line-card>p{margin:0 0 18px;color:#aaa;font-size:13px;line-height:1.65}
+.segment-line-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.segment-line-tags li{border:1px solid #ffffff24;border-radius:99px;padding:8px 14px;font:600 11px "Space Grotesk",sans-serif;color:#ddd}
+.segment-line-variants{display:grid;gap:10px;list-style:none;margin:0;padding:0}
+.segment-line-variants li{padding:14px 16px;border:1px solid #ffffff14;border-radius:12px;background:#00000030}
+.segment-line-variants strong{display:block;color:var(--orange);font:700 13px "Space Grotesk",sans-serif;margin-bottom:4px}
+.segment-line-variants span{display:block;color:#999;font-size:12px;line-height:1.5}
+
+.segments-gallery-lead{margin:0 0 22px;color:#aaa;font-size:14px;max-width:560px}
+.segments-showcase{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:46px}
+.segment-shot{position:relative;margin:0;border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:#111}
+.segment-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.segment-shot:hover img{transform:scale(1.06)}
+.segment-shot:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c,transparent 55%)}
+.segment-shot figcaption{position:absolute;left:14px;right:14px;bottom:14px;z-index:1;color:#fff}
+.segment-shot figcaption span{display:block;color:var(--orange);font:800 10px "Space Grotesk",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.segment-shot figcaption b{display:block;font:700 15px "Space Grotesk",sans-serif;line-height:1.25}
+
+.segments-tags-lead{margin:0 0 16px;color:#888;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+
+/* Hero: chamada de destaque para o catálogo de telas */
+.hero-catalog-cta{display:inline-flex;align-items:center;gap:16px;margin:26px 0 0;padding:14px 20px 14px 14px;border:1px solid #ffffff2a;border-radius:99px;background:#ffffff0a;backdrop-filter:blur(6px);transition:.25s;max-width:100%}
+.hero-catalog-cta:hover{border-color:var(--orange);background:#ff5a0014;transform:translateY(-2px)}
+.hero-catalog-cta-icon{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff}
+.hero-catalog-cta-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.hero-catalog-cta-copy{display:grid;gap:3px;min-width:0}
+.hero-catalog-cta-copy strong{color:#fff;font:700 14px "Space Grotesk",sans-serif}
+.hero-catalog-cta-copy>span{color:#999;font-size:11px;line-height:1.4}
+.hero-catalog-cta-arrow{flex:none;color:var(--orange);font-size:18px;transition:.25s}
+.hero-catalog-cta:hover .hero-catalog-cta-arrow{transform:translateX(4px)}
+
+@media(max-width:640px){
+  .hero-catalog-cta{width:100%;padding:12px 16px 12px 12px}
+  .hero-catalog-cta-copy>span{display:none}
+}
+
+@media(max-width:960px){
+  .segments-lines{grid-template-columns:1fr}
+  .segments-showcase{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:640px){
+  .segments-showcase{grid-template-columns:1fr 1fr;gap:10px}
+  .segment-shot figcaption b{font-size:13px}
+}
