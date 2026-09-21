@@ -18,3 +18,9 @@
   .catalog-teaser{flex-wrap:wrap;padding:16px 18px}
   .catalog-teaser-copy>span{display:none}
 }
+
+/* Instagram: avatar clicável com selo de "perfil oficial" (marca própria, não imita o selo azul do Instagram) */
+.instagram-avatar{position:relative;cursor:pointer;transition:transform .2s ease}
+.instagram-avatar:hover{transform:scale(1.05)}
+.instagram-badge{position:absolute;right:-3px;bottom:-3px;width:18px;height:18px;border-radius:50%;background:var(--orange);border:2px solid #111216;display:grid;place-items:center;box-shadow:0 2px 6px #0006}
+.instagram-badge svg{width:11px;height:11px;fill:#fff}
