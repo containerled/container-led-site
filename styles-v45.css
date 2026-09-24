@@ -1,0 +1,47 @@
+@import url("styles-v44.css");
+
+/* Instagram: card compacto de destaque no lugar da seção inteira */
+.instagram-cta-section{padding:44px 0}
+.instagram-cta-banner{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:22px 28px;
+  border-radius:20px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 20%,#ff5a0038,transparent 45%),
+    radial-gradient(circle at 90% 85%,#ff7a0030,transparent 50%),
+    #121212;
+  border:1px solid #ffffff16;
+  transition:.25s;
+}
+.instagram-cta-banner:hover{border-color:#ff5a0066;transform:translateY(-2px);box-shadow:0 20px 45px #0007}
+.instagram-cta-avatar{position:relative;flex:none;width:58px;height:58px;padding:8px;border-radius:50%;display:grid;place-items:center;background:#050505;border:2px solid transparent;background-image:linear-gradient(#050505,#050505),linear-gradient(135deg,#ffb000,#ff5a00,#a92cff);background-origin:border-box;background-clip:padding-box,border-box}
+.instagram-cta-avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.instagram-cta-copy{display:grid;gap:4px;flex:1;min-width:0}
+.instagram-cta-copy strong{color:#fff;font:700 16px "Space Grotesk",sans-serif}
+.instagram-cta-copy>span{color:#999;font-size:12px}
+.instagram-cta-button{
+  flex:none;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:var(--orange);
+  color:#fff;
+  font:800 12px "Space Grotesk",sans-serif;
+  letter-spacing:.02em;
+}
+.instagram-cta-button .platform-icon{width:18px;height:18px;flex:none;border-radius:5px}
+.instagram-cta-arrow{transition:transform .25s}
+.instagram-cta-banner:hover .instagram-cta-arrow{transform:translateX(4px)}
+
+@media(max-width:640px){
+  .instagram-cta-section{padding:32px 0}
+  .instagram-cta-banner{flex-wrap:wrap;padding:20px;row-gap:16px}
+  .instagram-cta-button{flex:1 1 100%;justify-content:center}
+  .instagram-cta-copy>span{display:none}
+}
