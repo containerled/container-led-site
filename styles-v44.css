@@ -1,0 +1,7 @@
+@import url("styles-v43.css");
+
+/* Remove estilo do botão de pause/play removido da seção Soluções (agora 100% automático) */
+.solution-video-toggle{display:none}
+
+/* Legenda discreta sob a galeria de fotos ilustrativas do totem */
+.segments-showcase-note{margin:10px 0 0;color:#666;font-size:10px;letter-spacing:.04em;text-align:center}
