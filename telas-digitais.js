@@ -75,16 +75,22 @@
     ["Duração dos anúncios", tela.duracao]
   ].filter(([,value]) => present(value));
 
+  const telaLabel = (tela) => telaNumber(tela.id).replace("TELA", "Tela") + " — " + tela.nome;
+
   const whatsappUrl = (tela) => {
     const lines = [
       "Olá! Vim pelo site da Container LED.",
       "",
-      "Gostaria de anunciar nesta tela:",
+      "Tenho interesse em anunciar na " + telaLabel(tela) + "."
+    ];
+    return "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(lines.join("\n"));
+  };
+
+  const whatsappPriceUrl = (tela) => {
+    const lines = [
+      "Olá! Vim pelo site da Container LED.",
       "",
-      telaNumber(tela.id).replace("TELA", "Tela") + " — " + tela.nome,
-      present(tela.local) ? "Local: " + tela.local : "Local: " + [tela.endereco, locality(tela)].filter(present).join(" — "),
-      "",
-      "Gostaria de receber informações sobre disponibilidade, planos e valores."
+      "Quero saber o preço para anunciar na " + telaLabel(tela) + "."
     ];
     return "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(lines.join("\n"));
   };
@@ -119,6 +125,7 @@
             ${present(tela.descricao) ? `<p>${esc(tela.descricao)}</p>` : ""}
             ${addressParts.length ? `<address>${addressParts.map(esc).join("<br>")}</address>` : ""}
             <a class="catalog-button catalog-button-primary screen-whatsapp" href="${whatsappUrl(tela)}" target="_blank" rel="noopener">QUERO ANUNCIAR NESTA TELA ↗</a>
+            <a class="screen-price-link" href="${whatsappPriceUrl(tela)}" target="_blank" rel="noopener">Quer saber o preço para anunciar? Clique aqui <span>↗</span></a>
           </div>
           <figure class="screen-detail-photo">${media(tela, true)}</figure>
         </div>

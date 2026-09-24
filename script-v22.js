@@ -286,7 +286,9 @@ solutionVideos.forEach((video) => {
 });
 
 document.querySelectorAll('.solution-video-toggle').forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     const video = button.closest('.solution-video-media')?.querySelector('.solution-video');
     if (!video) return;
     if (video.paused) {
