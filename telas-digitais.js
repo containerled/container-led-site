@@ -64,13 +64,18 @@
     }).join("");
   };
 
+  const chargerLabel = (tela) => !present(tela.variante) ? "" : (tela.variante === "Full" ? "Não — tela 100% em LED" : "Sim — USB e tomadas integrados");
+
   const detailFacts = (tela) => [
     ["Categoria", tela.tipo],
+    ["Modelo do totem", tela.variante],
+    ["Carregador de celular", chargerLabel(tela)],
     ["Dimensões", dimensions(tela)],
     ["Status", tela.status],
     ["Audiência", tela.audiencia],
     ["Inserções", tela.insercoes],
-    ["Resolução", tela.resolucao],
+    ["Resolução recomendada", tela.resolucao],
+    ["Formatos aceitos", tela.formatosAceitos],
     ["Horário de funcionamento", tela.horario],
     ["Duração dos anúncios", tela.duracao]
   ].filter(([,value]) => present(value));

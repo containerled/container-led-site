@@ -17,7 +17,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "https://www.google.com/maps?q=Av.%20Rondon%20Pacheco%2C%202064%2C%20Uberl%C3%A2ndia%2C%20MG&output=embed",
     audiencia: "9,2 mi/mês",
     insercoes: "~360/dia",
-    resolucao: "1080×1920 · 9:16 · STORIES",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Na principal avenida de Uberlândia, ao lado do Colégio Gabarito e Griff Shopping, com amplo campo visual e fluxo intenso."
   }),
   Object.freeze({
@@ -38,7 +39,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "https://www.google.com/maps?q=Av.%20Anselmo%20Alves%20dos%20Santos%2C%201056%2C%20Uberl%C3%A2ndia%2C%20MG&z=13&output=embed",
     audiencia: "4,65 mi/mês",
     insercoes: "~360/dia",
-    resolucao: "1080×1920 · 9:16 · STORIES",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Em frente ao Pátio Sabiá, em uma região de alto fluxo que conecta importantes setores de Uberlândia, a 200 metros do Parque do Sabiá."
   }),
   Object.freeze({
@@ -60,7 +62,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "",
     audiencia: "",
     insercoes: "",
-    resolucao: "",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Localizada no ponto de parada de motoristas de aplicativos (Uber), ao lado da escada rolante do Terminal Central, dentro da cafeteria K-Fé Container."
   }),
   Object.freeze({
@@ -68,6 +71,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     slug: "container-barber-club-santa-monica",
     nome: "Container Barber Club — Santa Mônica",
     tipo: "Totem",
+    variante: "Full",
     endereco: "Av. Belarmino Cotta Pacheco, 1177",
     bairro: "Santa Mônica",
     cidade: "Uberlândia",
@@ -82,7 +86,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "https://www.google.com/maps?q=-18.9166607,-48.2477827&output=embed",
     audiencia: "",
     insercoes: "",
-    resolucao: "",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Totem digital na Container Barber Club, no cruzamento da Av. Belarmino Cotta Pacheco com a Rua Nordau Gonçalves de Melo (antiga Rua 14), no bairro Santa Mônica."
   }),
   Object.freeze({
@@ -103,7 +108,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "",
     audiencia: "",
     insercoes: "",
-    resolucao: "",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Detalhes deste ponto serão publicados assim que o endereço for confirmado."
   }),
   Object.freeze({
@@ -124,7 +130,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     mapaEmbed: "",
     audiencia: "",
     insercoes: "",
-    resolucao: "",
+    resolucao: "1080×1920 px · 9:16",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Detalhes deste ponto serão publicados assim que o endereço for confirmado."
   })
 ]);
