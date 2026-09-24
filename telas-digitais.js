@@ -39,7 +39,6 @@
     grid.innerHTML = telas.map(tela => {
       const address = present(tela.endereco) ? `<p class="screen-address">${esc(tela.endereco)}</p>` : "";
       const neighborhood = present(tela.bairro) ? `<p class="screen-neighborhood">${esc(tela.bairro)}</p>` : "";
-      const dims = dimensions(tela);
       const maps = present(tela.googleMaps)
         ? `<a class="catalog-button catalog-button-secondary" href="${esc(tela.googleMaps)}" target="_blank" rel="noopener">VER NO GOOGLE MAPS ↗</a>`
         : `<span class="catalog-button catalog-button-disabled" aria-disabled="true">LOCALIZAÇÃO EM BREVE</span>`;
@@ -54,7 +53,6 @@
           <h2>${esc(tela.nome)}</h2>
           ${address}${neighborhood}
           <p class="screen-city">${esc(locality(tela))}</p>
-          ${dims ? `<dl><div><dt>Dimensões</dt><dd>${esc(dims)}</dd></div></dl>` : ""}
           <div class="screen-card-actions">
             <a class="catalog-button catalog-button-primary" href="${detailUrl(tela)}">CONHECER ESTA TELA</a>
             ${maps}
@@ -64,20 +62,20 @@
     }).join("");
   };
 
-  const chargerLabel = (tela) => !present(tela.variante) ? "" : (tela.variante === "Full" ? "Não — tela 100% em LED" : "Sim — USB e tomadas integrados");
+  const modeloLabel = (tela) => !present(tela.variante) ? "" : (tela.variante === "Full" ? "Tela Full" : "Tela + Carregador");
 
   const detailFacts = (tela) => [
     ["Categoria", tela.tipo],
-    ["Modelo do totem", tela.variante],
-    ["Carregador de celular", chargerLabel(tela)],
+    ["Modelo do totem", modeloLabel(tela)],
     ["Dimensões", dimensions(tela)],
     ["Status", tela.status],
     ["Audiência", tela.audiencia],
     ["Inserções", tela.insercoes],
+    ["Formato de exibição", tela.formatoExibicao],
+    ["Duração dos anúncios", tela.duracao],
     ["Resolução recomendada", tela.resolucao],
     ["Formatos aceitos", tela.formatosAceitos],
-    ["Horário de funcionamento", tela.horario],
-    ["Duração dos anúncios", tela.duracao]
+    ["Horário de funcionamento", tela.horario]
   ].filter(([,value]) => present(value));
 
   const telaLabel = (tela) => telaNumber(tela.id).replace("TELA", "Tela") + " — " + tela.nome;
