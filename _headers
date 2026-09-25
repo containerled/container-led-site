@@ -7,7 +7,7 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/styles-v47.css
+/styles-v48.css
   Cache-Control: public, max-age=300, must-revalidate
 
 /script-v22.js
