@@ -71,7 +71,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     duracao: "10s por inserção · ~3.600 s/dia · ~108.000 s/mês",
     resolucao: "1080×1920 px · 9:16",
     formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
-    descricao: "Av. João Pinheiro, 1154. Tela localizada no ponto de parada de motoristas de aplicativos (Uber), ao lado da escada rolante do Terminal Central, dentro da cafeteria K-Fé Container."
+    descricao: "Cruzamento Av. João Pessoa / Av. João Pinheiro, 1154. Tela localizada no ponto de parada de motoristas de aplicativos (Uber), ao lado da escada rolante do Terminal Central, dentro da cafeteria K-Fé Container."
   }),
   Object.freeze({
     id: 4,
