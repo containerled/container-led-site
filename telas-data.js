@@ -53,7 +53,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     nome: "Terminal Central",
     tipo: "Totem",
     variante: "Full",
-    endereco: "Av. João Pinheiro / Av. João Pessoa",
+    endereco: "Av. João Pinheiro, 1154",
     bairro: "Centro",
     cidade: "Uberlândia",
     estado: "MG",
@@ -79,7 +79,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     nome: "Container Barber Club — Santa Mônica",
     tipo: "Totem",
     variante: "Full",
-    endereco: "Av. Belarmino Cotta Pacheco / R. Nordau Gonçalves de Melo (antiga 14)",
+    endereco: "Av. Belarmino Cotta Pacheco, 1177 / R. Nordau Gonçalves de Melo (antiga 14)",
     bairro: "Santa Mônica",
     cidade: "Uberlândia",
     estado: "MG",
@@ -97,7 +97,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     duracao: "10s por inserção · ~3.600 s/dia · ~108.000 s/mês",
     resolucao: "1080×1920 px · 9:16",
     formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
-    descricao: "Totem digital na Container Barber Club, no cruzamento da Av. Belarmino Cotta Pacheco com a Rua Nordau Gonçalves de Melo (antiga Rua 14), no bairro Santa Mônica."
+    descricao: "Totem digital na Container Barber Club, na Av. Belarmino Cotta Pacheco, 1177, cruzamento com a Rua Nordau Gonçalves de Melo (antiga Rua 14), no bairro Santa Mônica."
   }),
   Object.freeze({
     id: 5,
