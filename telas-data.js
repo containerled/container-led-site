@@ -64,7 +64,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     imagem: "/assets/tela-03-terminal-central.webp",
     imagemAlt: "Totem digital Container LED na K-Fé Container, dentro do Terminal Central",
     googleMaps: "https://maps.app.goo.gl/rVtDsu9JGKjDJ9Yy6",
-    mapaEmbed: "",
+    mapaEmbed: "https://www.google.com/maps?q=-18.9140061,-48.2761088&output=embed",
     audiencia: "3,5 mi/mês",
     insercoes: "~360/dia · ~10.800/mês",
     formatoExibicao: "Loop contínuo",

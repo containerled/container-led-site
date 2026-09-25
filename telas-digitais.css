@@ -46,6 +46,8 @@
 .catalog-button-secondary{border:1px solid #565656;color:#fff}
 .catalog-button-secondary:hover{background:#fff;color:#080808}
 .catalog-button-disabled{border:1px solid #2b2b2b;color:#5f5f5f;cursor:not-allowed}
+.screen-maps-button{gap:10px;min-height:58px;padding:16px 28px;font-size:13px}
+.screen-maps-button .maps-pin-icon{width:20px;height:20px;flex:none}
 .catalog-footer{padding:42px 0;border-top:1px solid #242424;background:#050505}
 .catalog-footer .container{display:flex;justify-content:space-between;gap:24px;align-items:center}
 .catalog-footer p{color:#888}
