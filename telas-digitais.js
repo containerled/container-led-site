@@ -123,15 +123,17 @@
         <div class="screen-detail-grid">
           <div class="screen-detail-copy">
             <span class="catalog-kicker">${telaNumber(tela.id)} · ${esc(locality(tela))}</span>
-            <span class="screen-status ${statusClass(tela.status)}">${esc(tela.status)}</span>
-            ${present(tela.tipo) ? `<span class="screen-type screen-type-inline">${esc(tela.tipo)}</span>` : ""}
             <h1>${esc(tela.nome)}</h1>
             ${present(tela.descricao) ? `<p>${esc(tela.descricao)}</p>` : ""}
             ${addressParts.length ? `<address>${addressParts.map(esc).join("<br>")}</address>` : ""}
             <a class="catalog-button catalog-button-primary screen-whatsapp" href="${whatsappUrl(tela)}" target="_blank" rel="noopener">QUERO ANUNCIAR NESTA TELA ↗</a>
             <a class="screen-price-link" href="${whatsappPriceUrl(tela)}" target="_blank" rel="noopener">Quer saber o preço para anunciar? Clique aqui <span>↗</span></a>
           </div>
-          <figure class="screen-detail-photo">${media(tela, true)}</figure>
+          <figure class="screen-detail-photo">
+            ${media(tela, true)}
+            <span class="screen-status ${statusClass(tela.status)}">${esc(tela.status)}</span>
+            ${present(tela.tipo) ? `<span class="screen-type">${esc(tela.tipo)}</span>` : ""}
+          </figure>
         </div>
       </div></section>
       <section class="screen-facts"><div class="container"><dl>${facts}</dl></div></section>
