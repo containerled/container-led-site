@@ -13,9 +13,6 @@
 .catalog-teaser:hover .catalog-teaser-arrow{transform:translateX(5px)}
 
 @media(max-width:640px){
-  .catalog-teaser{padding:26px 22px;gap:18px}
-  .catalog-teaser-icon{width:52px;height:52px}
-  .catalog-teaser-icon svg{width:26px;height:26px}
   .catalog-teaser-copy>span{display:none}
 }
 

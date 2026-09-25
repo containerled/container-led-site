@@ -7,10 +7,19 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/styles.css
+/styles-v*.css
   Cache-Control: public, max-age=300, must-revalidate
 
-/script.js
+/script-v*.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+/telas-data.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+/telas-digitais.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+/telas-digitais.css
   Cache-Control: public, max-age=300, must-revalidate
 
 /assets/*
