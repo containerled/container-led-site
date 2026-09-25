@@ -60,7 +60,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     local: "Terminal Central — Centro — Uberlândia/MG",
     largura: 1,
     altura: 2,
-    status: "EM BREVE",
+    status: "Em operação",
     imagem: "/assets/tela-03-terminal-central.webp",
     imagemAlt: "Totem digital Container LED na K-Fé Container, dentro do Terminal Central",
     googleMaps: "https://maps.app.goo.gl/rVtDsu9JGKjDJ9Yy6",
