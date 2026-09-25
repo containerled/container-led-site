@@ -7,55 +7,7 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/styles-v30.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v31.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v32.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v33.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v34.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v35.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v36.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v37.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v38.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v39.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v40.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v41.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v42.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v43.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v44.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v45.css
-  Cache-Control: public, max-age=300, must-revalidate
-
-/styles-v46.css
+/styles-v47.css
   Cache-Control: public, max-age=300, must-revalidate
 
 /script-v22.js
@@ -63,7 +15,6 @@
 
 /telas-data.js
   Cache-Control: public, max-age=300, must-revalidate
-  X-Debug-Rule: telas-data-matched
 
 /telas-digitais.js
   Cache-Control: public, max-age=300, must-revalidate
