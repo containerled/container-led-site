@@ -87,7 +87,7 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     largura: 1,
     altura: 2,
     status: "Em operação",
-    imagem: "",
+    imagem: "/assets/tela-04-container-barber-club.webp",
     imagemAlt: "Totem digital Container LED, tela Full de 2,0 x 1,0 m",
     googleMaps: "https://www.google.com/maps/place/Av.+Belarmino+Cotta+Pacheco,+1177+-+Santa+M%C3%B4nica,+Uberl%C3%A2ndia+-+MG,+38408-168/@-18.9166353,-48.247639,21z/data=!4m6!3m5!1s0x94a445798be6f507:0x7a9f607ab20619b8!8m2!3d-18.9166607!4d-48.2477827!16s%2Fg%2F11kqfy8z94",
     mapaEmbed: "https://www.google.com/maps?q=-18.9166607,-48.2477827&output=embed",
