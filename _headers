@@ -63,6 +63,7 @@
 
 /telas-data.js
   Cache-Control: public, max-age=300, must-revalidate
+  X-Debug-Rule: telas-data-matched
 
 /telas-digitais.js
   Cache-Control: public, max-age=300, must-revalidate
