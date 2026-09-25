@@ -69,6 +69,7 @@
 .screen-facts dl>div:first-child{border-left:0}
 .screen-facts dt{color:#858585;text-transform:uppercase;font-size:10px;letter-spacing:.14em}
 .screen-facts dd{margin:8px 0 0;color:#fff;font:700 19px "Space Grotesk",sans-serif}
+.screen-facts dd small{color:#888;font:600 11px "Space Grotesk",sans-serif;letter-spacing:.02em}
 .screen-map-section{padding:90px 0;background:#0a0a0a}
 .screen-map-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:center}
 .screen-map-grid h2{font:700 clamp(32px,4vw,54px)/1 "Space Grotesk",sans-serif}

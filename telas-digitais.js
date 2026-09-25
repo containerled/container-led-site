@@ -5,7 +5,7 @@
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const present = (value) => value !== null && value !== undefined && String(value).trim() !== "";
   const telaNumber = (id) => "TELA " + String(id).padStart(2, "0");
-  const dimensions = (tela) => present(tela.altura) && present(tela.largura) ? tela.altura + " m de altura × " + tela.largura + " m de largura" : "";
+  const dimensions = (tela) => present(tela.altura) && present(tela.largura) ? tela.altura + "×" + tela.largura + "m" : "";
   const locality = (tela) => [tela.cidade, tela.estado].filter(present).join(" / ");
   const statusClass = (status) => /constru|breve/.test(String(status).toLowerCase()) ? "is-building" : "is-live";
   const detailUrl = (tela) => "/telas-digitais/" + encodeURIComponent(tela.slug);
@@ -111,7 +111,7 @@
     document.title = tela.nome + " | Telas Digitais Container LED";
     const description = document.querySelector('meta[name="description"]');
     if (description) description.content = "Conheça a tela digital " + tela.nome + " da Container LED em " + locality(tela) + ".";
-    const facts = detailFacts(tela).map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join("");
+    const facts = detailFacts(tela).map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}${label === "Dimensões" ? ` <small>(altura × largura)</small>` : ""}</dd></div>`).join("");
     const addressParts = [tela.endereco, tela.bairro, locality(tela)].filter(present);
     const mapSection = present(tela.mapaEmbed) ? `<section class="screen-map-section"><div class="container screen-map-grid"><div><span class="catalog-kicker">LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p><a class="catalog-button catalog-button-primary" href="${esc(tela.googleMaps)}" target="_blank" rel="noopener">VER NO GOOGLE MAPS ↗</a></div><iframe title="Mapa da tela ${esc(tela.nome)}" src="${esc(tela.mapaEmbed)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>` : present(tela.googleMaps) ? `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p><a class="catalog-button catalog-button-primary" href="${esc(tela.googleMaps)}" target="_blank" rel="noopener">VER NO GOOGLE MAPS ↗</a></div></section>` : `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Informações em atualização.</h2><p>Os dados completos deste ponto serão publicados assim que estiverem confirmados.</p></div></section>`;
     const otherScreens = telas.filter(item => item.slug !== tela.slug).map(item => `<article class="other-screen-card"><a class="other-screen-media" href="${detailUrl(item)}">${media(item)}<span class="screen-status ${statusClass(item.status)}">${esc(item.status)}</span><span class="screen-type">${esc(telaNumber(item.id))}</span></a><div><span class="screen-id">${esc((item.tipo || "").toUpperCase())}</span><h3>${esc(item.nome)}</h3><p>${esc(locality(item))}</p><a class="catalog-button catalog-button-secondary" href="${detailUrl(item)}">CONHECER ESTA TELA</a></div></article>`).join("");
