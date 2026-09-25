@@ -1,0 +1,5 @@
+@import url("styles-v45.css");
+
+/* Selo "PUBLICIDADE" em destaque no topo do bloco de telas digitais, para quem chega buscando anunciar */
+.section-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;padding:9px 20px;border-radius:999px;background:var(--orange);color:#fff;font:800 13px "Space Grotesk",sans-serif;letter-spacing:.1em}
+.section-badge svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}

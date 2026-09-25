@@ -55,6 +55,9 @@
 /styles-v45.css
   Cache-Control: public, max-age=300, must-revalidate
 
+/styles-v46.css
+  Cache-Control: public, max-age=300, must-revalidate
+
 /script-v22.js
   Cache-Control: public, max-age=300, must-revalidate
 
