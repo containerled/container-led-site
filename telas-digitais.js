@@ -35,6 +35,33 @@
     window.addEventListener("resize", () => { if (window.innerWidth > 960) close(); }, {passive:true});
   };
 
+  const renderCounter = () => {
+    const box = document.getElementById("screens-counter");
+    if (!box || !telas.length) return;
+    const live = telas.filter(tela => statusClass(tela.status) === "is-live");
+    const soon = telas.length - live.length;
+    const total = live.length;
+    const bars = telas.map(tela => {
+      const on = statusClass(tela.status) === "is-live";
+      return `<i class="sc-screen ${on ? "is-live" : "is-soon"}" title="${esc(telaNumber(tela.id))} — ${esc(on ? "em operação" : "em breve")}"></i>`;
+    }).join("");
+    const choose = total === 1 ? "Você pode anunciar em 1 ponto da cidade." : "Escolha entre " + total + " pontos da cidade para a sua marca aparecer.";
+    const soonChip = soon > 0 ? `<span class="sc-soon">+${soon} ${soon === 1 ? "tela em breve" : "telas em breve"}</span>` : "";
+    box.setAttribute("aria-label", total + (total === 1 ? " tela em operação" : " telas em operação"));
+    box.innerHTML = `<div class="sc-number" aria-hidden="true"><span id="sc-value">${total}</span></div>
+      <div class="sc-text"><span class="sc-label"><b></b>${total === 1 ? "TELA EM OPERAÇÃO" : "TELAS EM OPERAÇÃO"}</span><p>${choose}</p><div class="sc-bars" aria-hidden="true">${bars}${soonChip}</div></div>`;
+    const value = document.getElementById("sc-value");
+    if (!value || total < 2 || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    const start = performance.now(), duration = 900;
+    const tick = (now) => {
+      const progress = Math.min(1, (now - start) / duration);
+      value.textContent = String(Math.max(1, Math.round(total * (1 - Math.pow(1 - progress, 3)))));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    value.textContent = "1";
+    requestAnimationFrame(tick);
+  };
+
   const renderCatalog = () => {
     const grid = document.getElementById("screens-catalog");
     if (!grid) return;
@@ -145,6 +172,7 @@
   };
 
   setMenu();
+  renderCounter();
   renderCatalog();
   renderDetail();
   const year = document.getElementById("year");
