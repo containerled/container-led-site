@@ -1,28 +1,4 @@
-/* ===== Botão "Publicidade" no menu + selo PUBLICIDADE animado ===== */
-
-/* --- Menu: botão Publicidade --- */
-.main-nav a.nav-publicidade{
-  position:relative;display:inline-flex;align-items:center;gap:9px;
-  padding:10px 20px 10px 16px;border-radius:999px;border:0;
-  color:#fff;font-weight:800;letter-spacing:.02em;line-height:1.1;
-  background:
-    linear-gradient(#141010,#141010) padding-box,
-    linear-gradient(110deg,#ff5a00,#ffb066,#ff2e00,#ff5a00) border-box;
-  border:2px solid transparent;background-size:100% 100%,300% 100%;
-  animation:pub-border 3.2s linear infinite;
-  box-shadow:0 0 0 0 rgba(255,90,0,.55);
-  transition:transform .2s;
-}
-.main-nav a.nav-publicidade:hover{transform:translateY(-2px) scale(1.04)}
-.main-nav a.nav-publicidade svg{width:18px;height:18px;flex:none;fill:none;stroke:#ff8a3d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:pub-wiggle 2.6s ease-in-out infinite;transform-origin:30% 60%}
-.main-nav a.nav-publicidade:after{
-  content:"";position:absolute;inset:-2px;border-radius:inherit;pointer-events:none;
-  animation:pub-ping 2.4s cubic-bezier(.2,.6,.3,1) infinite;
-}
-@keyframes pub-border{to{background-position:0 0,300% 0}}
-@keyframes pub-ping{0%{box-shadow:0 0 0 0 rgba(255,90,0,.55)}70%,100%{box-shadow:0 0 0 12px rgba(255,90,0,0)}}
-@keyframes pub-wiggle{0%,60%,100%{transform:rotate(0) scale(1)}70%{transform:rotate(-14deg) scale(1.15)}80%{transform:rotate(8deg) scale(1.15)}90%{transform:rotate(-4deg)}}
-@media(max-width:960px){.main-nav a.nav-publicidade{align-self:flex-start;padding:13px 24px 13px 20px;font-size:20px}.main-nav a.nav-publicidade svg{width:22px;height:22px}}
+/* ===== Selo PUBLICIDADE animado (seção de publicidade da home) ===== */
 
 /* --- Selo PUBLICIDADE (não clicável) em dobro e animado --- */
 #paineis .section-badge{
@@ -50,6 +26,5 @@
 #paineis .section-heading h2 .word-visto{font-size:1.3em;line-height:.9}
 
 @media (prefers-reduced-motion:reduce){
-  .main-nav a.nav-publicidade,.main-nav a.nav-publicidade:after,.main-nav a.nav-publicidade svg,
   #paineis .section-badge,#paineis .section-badge:before,#paineis .section-badge svg{animation:none}
 }
