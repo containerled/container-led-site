@@ -46,3 +46,7 @@
 @keyframes tt-slide{0%,20%{transform:translateY(0)}27%,45%{transform:translateY(-25%)}52%,70%{transform:translateY(-50%)}77%,100%{transform:translateY(-75%)}}
 @keyframes tt-scan{to{top:110%}}
 @media (prefers-reduced-motion:reduce){.tt-slides,.tt-screen:after{animation:none}}
+
+/* --- Título do simulador (texto mais longo): cabe em uma linha no desktop --- */
+.quick-simulator-heading{max-width:1100px}
+.quick-simulator-heading h2{text-wrap:balance}
