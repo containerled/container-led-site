@@ -41,7 +41,7 @@
     const live = telas.filter(tela => statusClass(tela.status) === "is-live");
     const soon = telas.length - live.length;
     const total = live.length;
-    const bars = telas.map(tela => {
+    const bars = [...telas].sort((a, b) => (statusClass(a.status) === "is-live" ? 0 : 1) - (statusClass(b.status) === "is-live" ? 0 : 1)).map(tela => {
       const on = statusClass(tela.status) === "is-live";
       return `<i class="sc-screen ${on ? "is-live" : "is-soon"}" title="${esc(telaNumber(tela.id))} — ${esc(on ? "em operação" : "em breve")}"></i>`;
     }).join("");
