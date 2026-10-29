@@ -148,5 +148,33 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     resolucao: "1080×1920 px · 9:16",
     formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
     descricao: "Na principal avenida de Uberlândia, ao lado do Colégio Gabarito e Griff Shopping, com amplo campo visual e fluxo intenso."
+  }),
+  Object.freeze({
+    id: 7,
+    slug: "start-gym-jardim-botanico",
+    nome: "Startgym Fitness Center — Jardim Botânico",
+    tipo: "Totem",
+    variante: "Carregador",
+    endereco: "Av. Ver. Carlito Cordeiro, 1293",
+    bairro: "Jardim Botânico — Zona Sul",
+    cidade: "Uberlândia",
+    estado: "MG",
+    local: "Startgym Fitness Center — Av. Ver. Carlito Cordeiro, 1293 — Jardim Botânico (Zona Sul) — Uberlândia/MG",
+    largura: "0,70",
+    altura: 2,
+    status: "Em operação",
+    imagem: "/assets/tela-07-start-gym.webp",
+    imagemAlt: "Totem digital carregador Container LED na academia Startgym Fitness Center, no Jardim Botânico, Zona Sul de Uberlândia",
+    googleMaps: "https://www.google.com/maps/place/Startgym+Fitness+Center/@-18.9464732,-48.2529842,17z/data=!3m1!4b1!4m6!3m5!1s0x94a45aadf28aa1fb:0xdada0af92fa30d58!8m2!3d-18.9464732!4d-48.2529842!16s%2Fg%2F11cr_zyj1w",
+    mapaEmbed: "https://www.google.com/maps?q=-18.9464732,-48.2529842&z=17&output=embed",
+    latitude: -18.9464732,
+    longitude: -48.2529842,
+    audiencia: "~15 mil pessoas/mês (estimativa)",
+    insercoes: "~360/dia · ~10.800/mês",
+    formatoExibicao: "Loop contínuo",
+    duracao: "10s por inserção · ~3.600 s/dia · ~108.000 s/mês",
+    resolucao: "640×1280 px · 2:5",
+    formatosAceitos: "JPG ou PNG (foto) · MP4 ou MOV (vídeo)",
+    descricao: "Totem carregador de celular dentro da Startgym Fitness Center, uma das academias mais bem avaliadas da Zona Sul de Uberlândia, no Jardim Botânico. Estrutura moderna, equipamentos novos, ambiente motivador e alunos fiéis que frequentam todos os dias, inclusive de manhã bem cedo. Sua marca fica diante de um público engajado, de hábitos saudáveis e com poder de consumo, enquanto ele recarrega o celular entre os treinos. Ideal para quem quer atingir os moradores do Jardim Botânico, Jardim Inconfidência, Shopping Park, Granja Marileusa e toda a região Sul."
   })
 ]);
