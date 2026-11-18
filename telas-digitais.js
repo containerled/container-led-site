@@ -17,6 +17,9 @@
     : tela.imagem
       ? `<img src="${esc(tela.imagem)}" alt="${esc(tela.imagemAlt || tela.nome)}" loading="${large ? "eager" : "lazy"}">`
       : `<div class="screen-placeholder" role="img" aria-label="Imagem da ${esc(tela.nome)} em breve"><span>IMAGEM EM BREVE</span></div>`;
+  const catalogMedia = (tela) => present(tela.catalogVideo)
+    ? `<video class="screen-media-video" muted loop playsinline preload="metadata" poster="${esc(tela.imagem)}" aria-label="${esc(tela.imagemAlt || tela.nome)}"><source src="${esc(tela.catalogVideo)}" type="video/mp4">Seu navegador não suporta vídeos HTML5.</video>${playPauseButton}`
+    : media(tela);
 
   const setMenu = () => {
     const button = document.querySelector(".menu-toggle");
@@ -74,7 +77,7 @@
         : `<span class="catalog-button catalog-button-disabled" aria-disabled="true">LOCALIZAÇÃO EM BREVE</span>`;
       return `<article class="screen-card">
         <a class="screen-card-media" href="${detailUrl(tela)}" aria-label="Conhecer ${esc(tela.nome)}">
-          ${media(tela)}
+          ${catalogMedia(tela)}
           <span class="screen-status ${statusClass(tela.status)}">${esc(tela.status)}</span>
           <span class="screen-type">${esc(telaNumber(tela.id))}</span>
         </a>
