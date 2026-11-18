@@ -11,8 +11,9 @@
   const detailUrl = (tela) => "/telas-digitais/" + encodeURIComponent(tela.slug);
   const mapsPinIcon = `<svg class="maps-pin-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2C7.86 2 4.5 5.36 4.5 9.5 4.5 14.75 10.66 20.84 10.92 21.1a1.5 1.5 0 0 0 2.16 0c.26-.26 6.42-6.35 6.42-11.6C19.5 5.36 16.14 2 12 2zm0 10.25a2.75 2.75 0 1 1 0-5.5 2.75 2.75 0 0 1 0 5.5z"/></svg>`;
   const mapsButton = (tela, buttonClass) => `<a class="catalog-button ${buttonClass} screen-maps-button" href="${esc(tela.googleMaps)}" target="_blank" rel="noopener">${mapsPinIcon}VER NO GOOGLE MAPS ↗</a>`;
+  const playPauseButton = `<button class="screen-media-playpause" type="button" aria-label="Reproduzir vídeo"><svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg></button>`;
   const media = (tela, large = false) => present(tela.video)
-    ? `<video class="screen-media-video" autoplay muted loop playsinline preload="metadata" poster="${esc(tela.imagem)}" aria-label="${esc(tela.imagemAlt || tela.nome)}"><source src="${esc(tela.video)}" type="video/mp4">Seu navegador não suporta vídeos HTML5.</video>`
+    ? `<video class="screen-media-video" muted loop playsinline preload="metadata" poster="${esc(tela.imagem)}" aria-label="${esc(tela.imagemAlt || tela.nome)}"><source src="${esc(tela.video)}" type="video/mp4">Seu navegador não suporta vídeos HTML5.</video>${playPauseButton}`
     : tela.imagem
       ? `<img src="${esc(tela.imagem)}" alt="${esc(tela.imagemAlt || tela.nome)}" loading="${large ? "eager" : "lazy"}">`
       : `<div class="screen-placeholder" role="img" aria-label="Imagem da ${esc(tela.nome)} em breve"><span>IMAGEM EM BREVE</span></div>`;
@@ -171,44 +172,47 @@
       ${mapSection}
       ${otherScreensSection}
       <section class="screen-detail-footer-cta"><div class="container"><a class="catalog-button screen-catalog-back" href="/telas-digitais/">← VOLTAR PARA TODAS AS TELAS</a></div></section>`;
-    initLocationVideos();
   };
 
-  const initLocationVideos = () => {
-    document.querySelectorAll(".screen-location-video-wrap").forEach(wrap => {
-      const video = wrap.querySelector("video");
-      const button = wrap.querySelector(".screen-location-playpause");
-      if (!video || !button) return;
-      const safePlay = () => { video.play().catch(() => {}); };
-      video.addEventListener("play", () => {
-        wrap.classList.add("is-playing");
-        button.setAttribute("aria-label", "Pausar vídeo de localização");
-      });
-      video.addEventListener("pause", () => {
-        wrap.classList.remove("is-playing");
-        button.setAttribute("aria-label", "Reproduzir vídeo de localização");
-      });
-      const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      if (hoverCapable) {
-        wrap.addEventListener("mouseenter", safePlay);
-        wrap.addEventListener("mouseleave", () => video.pause());
-      } else if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => { entry.isIntersecting ? safePlay() : video.pause(); });
-        }, { threshold: 0.5 });
-        observer.observe(wrap);
-      }
-      button.addEventListener("click", event => {
-        event.stopPropagation();
-        if (video.paused) safePlay(); else video.pause();
-      });
+  const wireInteractiveVideo = (wrap) => {
+    const video = wrap.querySelector("video");
+    const button = wrap.querySelector(".screen-location-playpause, .screen-media-playpause");
+    if (!video || !button) return;
+    const safePlay = () => { video.play().catch(() => {}); };
+    video.addEventListener("play", () => {
+      wrap.classList.add("is-playing");
+      button.setAttribute("aria-label", "Pausar vídeo");
     });
+    video.addEventListener("pause", () => {
+      wrap.classList.remove("is-playing");
+      button.setAttribute("aria-label", "Reproduzir vídeo");
+    });
+    const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (hoverCapable) {
+      wrap.addEventListener("mouseenter", safePlay);
+      wrap.addEventListener("mouseleave", () => video.pause());
+    } else if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { entry.isIntersecting ? safePlay() : video.pause(); });
+      }, { threshold: 0.5 });
+      observer.observe(wrap);
+    }
+    button.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (video.paused) safePlay(); else video.pause();
+    });
+  };
+
+  const initInteractiveVideos = () => {
+    document.querySelectorAll(".screen-location-video-wrap, .screen-card-media, .other-screen-media, .screen-detail-photo").forEach(wireInteractiveVideo);
   };
 
   setMenu();
   renderCounter();
   renderCatalog();
   renderDetail();
+  initInteractiveVideos();
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
