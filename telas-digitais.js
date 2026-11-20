@@ -147,10 +147,8 @@
     const facts = detailFacts(tela).map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}${label === "Dimensões" ? ` <small>(altura × largura)</small>` : ""}</dd></div>`).join("");
     const addressParts = [tela.endereco, tela.bairro, locality(tela)].filter(present);
     const localDetail = present(tela.local) ? `<p class="screen-location-detail">${esc(tela.local)}</p>` : "";
-    const locationPoster = present(tela.localizacaoVideo) ? tela.localizacaoVideo.replace(/\.mp4$/, "-poster.webp") : "";
-    const locationVideo = present(tela.localizacaoVideo) ? `<div class="screen-location-video-wrap"><video class="screen-location-video" muted loop playsinline preload="metadata" poster="${esc(locationPoster)}" aria-label="Vídeo mostrando a localização da ${esc(tela.nome)}"><source src="${esc(tela.localizacaoVideo)}" type="video/mp4"></video><button class="screen-location-playpause" type="button" aria-label="Reproduzir vídeo de localização"><svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg></button></div>` : "";
-    const mapSection = present(tela.mapaEmbed) ? `<section class="screen-map-section"><div class="container screen-map-grid"><div><span class="catalog-kicker">LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p>${localDetail}${mapsButton(tela, "catalog-button-primary")}</div><div class="screen-map-media">${locationVideo}<iframe title="Mapa da tela ${esc(tela.nome)}" src="${esc(tela.mapaEmbed)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></section>` : present(tela.googleMaps) ? `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p>${localDetail}${mapsButton(tela, "catalog-button-primary")}${locationVideo}</div></section>` : `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Informações em atualização.</h2><p>Os dados completos deste ponto serão publicados assim que estiverem confirmados.</p></div></section>`;
-    const otherScreens = telas.filter(item => item.slug !== tela.slug).map(item => `<article class="other-screen-card"><a class="other-screen-media" href="${detailUrl(item)}">${media(item)}<span class="screen-status ${statusClass(item.status)}">${esc(item.status)}</span><span class="screen-type">${esc(telaNumber(item.id))}</span></a><div><span class="screen-id">${esc((item.tipo || "").toUpperCase())}</span><h3>${esc(item.nome)}</h3><p>${esc(locality(item))}</p><a class="catalog-button catalog-button-secondary" href="${detailUrl(item)}">CONHECER ESTA TELA</a></div></article>`).join("");
+    const mapSection = present(tela.mapaEmbed) ? `<section class="screen-map-section"><div class="container screen-map-grid"><div><span class="catalog-kicker">LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p>${localDetail}${mapsButton(tela, "catalog-button-primary")}</div><iframe title="Mapa da tela ${esc(tela.nome)}" src="${esc(tela.mapaEmbed)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>` : present(tela.googleMaps) ? `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Veja onde sua marca vai aparecer.</h2><p>${addressParts.map(esc).join("<br>")}</p>${localDetail}${mapsButton(tela, "catalog-button-primary")}</div></section>` : `<section class="screen-location-pending"><div class="container"><span>LOCALIZAÇÃO</span><h2>Informações em atualização.</h2><p>Os dados completos deste ponto serão publicados assim que estiverem confirmados.</p></div></section>`;
+    const otherScreens = telas.filter(item => item.slug !== tela.slug).map(item => `<article class="other-screen-card"><a class="other-screen-media" href="${detailUrl(item)}">${catalogMedia(item)}<span class="screen-status ${statusClass(item.status)}">${esc(item.status)}</span><span class="screen-type">${esc(telaNumber(item.id))}</span></a><div><span class="screen-id">${esc((item.tipo || "").toUpperCase())}</span><h3>${esc(item.nome)}</h3><p>${esc(locality(item))}</p><a class="catalog-button catalog-button-secondary" href="${detailUrl(item)}">CONHECER ESTA TELA</a></div></article>`).join("");
     const otherScreensSection = otherScreens ? `<section class="other-screens-section"><div class="container"><span class="catalog-kicker">CONTINUE NAVEGANDO</span><h2>NAVEGUE PELAS OUTRAS TELAS</h2><div class="other-screens-grid">${otherScreens}</div></div></section>` : "";
     root.innerHTML = `
       <section class="screen-detail-hero"><div class="container">
@@ -179,7 +177,7 @@
 
   const wireInteractiveVideo = (wrap) => {
     const video = wrap.querySelector("video");
-    const button = wrap.querySelector(".screen-location-playpause, .screen-media-playpause");
+    const button = wrap.querySelector(".screen-media-playpause");
     if (!video || !button) return;
     const safePlay = () => { video.play().catch(() => {}); };
     video.addEventListener("play", () => {
@@ -208,7 +206,7 @@
   };
 
   const initInteractiveVideos = () => {
-    document.querySelectorAll(".screen-location-video-wrap, .screen-card-media, .other-screen-media, .screen-detail-photo").forEach(wireInteractiveVideo);
+    document.querySelectorAll(".screen-card-media, .other-screen-media, .screen-detail-photo").forEach(wireInteractiveVideo);
   };
 
   setMenu();

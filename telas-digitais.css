@@ -85,20 +85,10 @@
 .screen-map-grid p{color:#aaa;line-height:1.7}
 .screen-location-detail{margin-top:14px;color:#777;font-size:13px;line-height:1.6}
 .screen-map-grid iframe{width:100%;min-height:470px;border:0;border-radius:20px}
-.screen-map-media{display:flex;flex-direction:column;gap:20px}
-.screen-location-video-wrap{position:relative;width:100%;max-width:300px;margin:0 auto;cursor:pointer}
-.screen-location-video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:2px solid #ff5a00;border-radius:20px;box-shadow:0 20px 55px rgba(255,76,0,.12);background:#0a0a0a}
-.screen-location-playpause{position:absolute;right:12px;bottom:12px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(10,10,10,.6);backdrop-filter:blur(4px);display:grid;place-items:center;color:#fff;cursor:pointer;transition:background .2s,transform .2s}
-.screen-location-playpause:hover{background:rgba(255,90,0,.85)}
-.screen-location-playpause svg{width:18px;height:18px}
-.screen-location-playpause .icon-pause{display:none}
-.screen-location-video-wrap.is-playing .icon-play{display:none}
-.screen-location-video-wrap.is-playing .icon-pause{display:block}
 .screen-location-pending{padding:80px 0;background:#0a0a0a;text-align:center}
 .screen-location-pending span{color:#ff5a00;font-size:11px;font-weight:800;letter-spacing:.16em}
 .screen-location-pending h2{font:700 40px "Space Grotesk",sans-serif}
 .screen-location-pending p{color:#999}
-.screen-location-pending .screen-location-video-wrap{margin-top:30px}
 .screen-detail-footer-cta{padding:55px 0;background:#111}
 .screen-detail-footer-cta .container{display:flex;justify-content:space-between;align-items:center;gap:25px}
 .screen-detail-footer-cta p{font-size:19px;font-weight:700}
