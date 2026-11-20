@@ -161,6 +161,8 @@ window.CONTAINER_LED_TELAS = Object.freeze([
     imagemAlt: "Totem digital Container LED na Academia Twenty One Company, Unidade 2, no bairro Novo Mundo",
     googleMaps: "https://maps.app.goo.gl/eJzFTZ3jYjeq9u198",
     mapaEmbed: "https://www.google.com/maps?q=-18.9244061,-48.2146252&z=16&output=embed",
+    localizacaoVideo: "/assets/tela-06-twenty-one-company-localizacao.mp4",
+    catalogVideo: "/assets/tela-06-twenty-one-company-catalogo.mp4",
     audiencia: "~20 mil pessoas/mês (estimativa)",
     insercoes: "~360/dia · ~10.800/mês",
     formatoExibicao: "Loop contínuo",
